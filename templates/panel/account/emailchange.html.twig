@@ -1,0 +1,28 @@
+{% extends 'panel/panelbase.html.twig' %}
+
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="css/login.css">
+<style>
+#email_change_newemail{
+	background-color:pink;
+}
+#button_sum{
+	background-color:grey;
+}
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="row">
+  {{ form_start(form) }}
+Şuanki Mail Adresiniz : {{ usermail.email }}
+
+
+{{ form_row(form.newemail) }}
+
+<button id="button_sum" type="submit">Gönder!</button>
+{{ form_end(form) }}
+</div>
+
+{% endblock %}

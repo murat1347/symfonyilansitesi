@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="css/login.css">
+{% endblock %}
+
+{% block body %}
+<div class="row">
+{{ form_start(form) }}
+{{ form_row(form.firstName) }}
+{{ form_row(form.secondName) }}
+{{ form_row(form.email) }}
+{{ form_row(form.city) }}
+{{ form_row(form.plainPassword.first) }}
+{{ form_row(form.plainPassword.second) }}
+{{ form_row(form.termsAccepted) }}
+<button type="submit">Register!</button>
+{{ form_end(form) }}
+</div>
+{% endblock %}

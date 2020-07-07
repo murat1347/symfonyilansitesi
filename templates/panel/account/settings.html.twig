@@ -1,0 +1,9 @@
+{% extends 'panel/panelbase.html.twig' %}
+{% block body %}
+
+
+<form action="{{ path ('panel_account_settings')}}" method="post">
+ <p>Ýsminiz = {{ (usernewname.firstName) }}</p>
+ <p>Yeni isim <input type="text" name="newname" /></p>
+ <p><input type="submit" /></p>
+</form>{% endblock %}

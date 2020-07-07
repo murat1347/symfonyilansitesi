@@ -1,0 +1,49 @@
+{% extends 'panel/panelbase.html.twig' %}
+
+{% block body %}
+
+
+<div class="card mb-3">
+	<div class="card-header">
+		<i class="fa fa-table"></i> İnstagram
+	</div>
+	<div class="card-body">
+		<div class="table-responsive">
+			<table class="table table-bordered" id="dataTable" width="100%"
+				cellspacing="0">
+				<thead>
+					<tr>
+						<th>Sayfa Ismi</th>
+						<th>Sayfa Linki</th>
+						<th>Onay</th>
+						<th></th>
+
+					</tr>
+				</thead>
+		
+				<tbody>
+					{% for page in  Instagram_pages %}
+					<tr>
+						<td>{{ page.pageName}}</td>
+						<td>{{ page.pageLink }}</td>
+						<td> 
+						{%   if page.isVertified %}
+							Onaylı
+						{% else %}
+							<button>ONAYLA</button> 		
+						{% endif %}
+						</td>
+						<td><button>DÜZENLE</button> <button>SİL</button></td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+{% endblock %}

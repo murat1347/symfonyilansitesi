@@ -1,0 +1,51 @@
+{% extends 'panel/panelbase.html.twig' %}
+
+{% block body %}
+
+
+<div class="card mb-3">
+	<div class="card-header">
+		<i class="fa fa-table"></i> Twitter
+	</div>
+	<div class="card-body">
+		<div class="table-responsive">
+			<table class="table table-bordered" id="dataTable" width="100%"
+				cellspacing="0">
+				<thead>
+					<tr>
+						<th>Sayfa Ismi</th>
+						<th>Sayfa Linki</th>
+						<th>Onay</th>
+						<th></th>
+
+					</tr>
+				</thead>
+		
+				<tbody>
+					{% for page in  Twitter_pages %}
+					<tr>
+						<td>{{ page.pageName}}</td>
+						<td>{{ page.pageLink }}</td>
+						<td> 
+						{%   if page.IsVertified %}
+							Onayl�
+						{% else %}
+							<form action= "{{ path("panel_vertify_twitter",{id:page.id})}}">
+						     	<button type="submit">ONAYLA</button> 
+							</form>		
+						{% endif %}
+						</td>
+						<td><button>D�ZENLE</button> <button>S�L</button></td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,50 @@
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+
+
+
+
+	<!-- Jumbotron Header -->
+	<header class="jumbotron my-4">
+		<h1 class="display-3">Reklam Verip Kazancınızı Arttırın!</h1>
+		<p class="lead">Facebook instagram ve twitter sayfalarınızdan gelir elde etmek artık daha kolay
+Sosyal Reklam Websitesi artık yüzlerce sayfayı ve reklamvereni buluşturuyor Durma Hemen Sende Katıl !</p>
+		
+		<a href="/register" class="btn btn-primary btn-lg">Hemen Kayıt Ol!</a>
+	</header>
+
+	<!-- Page Features -->
+	<div class="row text-center">
+	
+		{% for page in facebook_pages %}
+		<figure class="snip1423">
+			<img
+				src="{{ page.imagelink }}"
+				alt="sample57" />
+			<figcaption>
+				<h3>{{ page.pageName}}</h3>
+				<p>{{ page.description }}</p>
+				<div class="price">
+					{{ page.price }} TL
+				</div>
+			</figcaption>
+			<i class="ion-android-cart"></i>
+			<a href="{{ page.pageLink }}"></a>
+		</figure>
+				
+		{% endfor %}
+		
+	
+	</div>
+	<!-- /.row -->
+
+
+
+
+
+{% endblock %}
+

@@ -1,0 +1,35 @@
+{% extends 'panel/panelbase.html.twig' %}
+
+
+
+{% block stylesheets %}
+<link href="{{ asset('css/productpage.css') }}" rel="stylesheet">{% endblock %}
+{% block body %}
+
+<form action="{{ path("panel_productpage_facebook") }}" method="post">
+	Fiyat Min <input type="text" size="5" value="{{ valueMin }}" name="value_min" /> Max <input type="text" size="5" name="value_max" value="{{ valueMax }}"/> 
+	 <input type="radio"
+		value="all" name="verified" {{ radioAll }} > Hepsi
+	 <input type="radio"
+		value="onayli" name="verified" {{ radioVerified}} > Onayli <input type="radio"
+	    value="onaysiz" name="verified" {{ radioNotVerified }}> Onaysiz
+		<button type="submit">Filtrele</button>
+		 <br>
+</form>
+
+{% for page in facebook_pages %}
+
+<figure class="snip1418"><img width="315px" height="191px" src="{{ page.imagelink }}" alt="sample85"/>
+  <div class="add-to-cart"> <i class="ion-android-add"></i><span>�ncele</span></div>
+  <figcaption>
+    <h3>{{ page.pageName}}</h3>
+    <p>{{ page.description }}</p>
+    <div class="price">
+    {{ page.price }} TL
+    </div>
+  </figcaption><a href="{{ page.id }}"></a>
+</figure>
+{% endfor %}
+<script src="{{ asset('js/productpage.min.js') }}"></script>
+	
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'panel/panelbase.html.twig' %}
+
+{% block body %}
+
+{{ form_start(form) }}
+
+{{ form_row(form.pagename)}}
+{{ form_row(form.pageimage)}}
+{{ form_row(form.pagelink) }}
+{{ form_row(form.price)}}
+{{ form_row(form.description)}}
+
+<button type="submit">Gönder!</button>
+{{ form_end(form) }}
+
+{% endblock %}
+
+
